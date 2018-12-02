@@ -715,6 +715,7 @@ void jswrap_wifi_connect(
 
   // Perform a an esp_wifi_set_config
   wifi_config_t staConfig;
+  memset(&staConfig,0,sizeof(wifi_config_t));
   memcpy(staConfig.sta.ssid, ssid, sizeof(staConfig.sta.ssid));
   memcpy(staConfig.sta.password, password, sizeof(staConfig.sta.password));
   staConfig.sta.bssid_set = false;
